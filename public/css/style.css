@@ -1,0 +1,11 @@
+/* 
+    Created on : 18-Jan-2016, 17:15:21
+    Author     : Joe Wheatley <joew@fnvi.co.uk>
+*/
+
+body{
+    padding-top: 70px;
+}
+.text-strike{
+    text-decoration: line-through;
+}
