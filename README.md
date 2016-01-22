@@ -128,7 +128,6 @@ Next there is a shorthand if else statement just inside the foreach loop on inde
  If you have any issues don't be afraid to get in touch and ask.
  
  ## Editing Todo items
- 
  In the index.php file find the btn-group that is used for each item. You will need to add a new button to edit items.
  This button should be put right after the done button (inside the if statement).
  The button should
