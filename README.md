@@ -88,6 +88,7 @@ switch($action)
 
 ```
 
+
 Now this has been added, using your git client to commit your code with a brief message of what you have done, and push it to the remote repository
 
 ## Marking items as done
@@ -111,6 +112,8 @@ A public method will need to be added to mark the todo as done. The syntax is vi
 
 Now go back to index.php. You will need to add another case into the switch statement like in the previous task.
 The value to check for this time can be found in a hidden input on the panel body or by clicking the done button on an item and checking the request parameters. The code to be executed will need to call your method on the $todo object as well as the store method to save the change to the database.
+
+**Please bear in mind you will have to call the store function in the case you added above to save the item**
 
 Lastly it would great to have the user interface reflect that an item has been done.
 Firstly go to public/css/style.css and add a css class for done items that puts a line through text.
@@ -154,6 +157,7 @@ Once done, run the the example and check that the description is now in the text
 Now the last part is hooking that up on the server for when the message is sent.
 
 Head back to index.php to the switch statement and add the case for "edit" and make it call suitable methods from the Todo and Document classes to set the description and store the item.
+**Please bear in mind you will have to call the store function in the case you added above to save the item**
 
 Test the code and then commit all files used an push to the remote repository.
 
