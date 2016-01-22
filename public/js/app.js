@@ -9,6 +9,7 @@
      */
     $('#modalRemove').on('show.bs.modal',function(event){
         
+        var message = "";
         // get access to the button as a jQuery object
         var button = $(event.relatedTarget);
         // find the ancestor that represents the whole todo item
@@ -20,10 +21,20 @@
         // get the id of the todo from the button
         var _id = button.data("id");
         
-        // set the text on the modal
-        modal.find('.modal-message').text('Are you sure you want to remove "' + description.trim() + '"?');
         // put the id into the hidden input
         modal.find('input[name=_id]').val(_id);
+        
+        /*
+         * 
+         * When using this modal to remove all items, the description will be empty.
+         * If the _id variable is empty then change the message in the modal to check the user
+         * wants to remove all items
+         */
+        
+        message = '"'+description.trim()+'"';
+        
+        // set the text on the modal
+        modal.find('.modal-message').text('Are you sure you want to remove ' + message + '?');
         
     });
     
@@ -48,12 +59,15 @@
         var _id = "";
         var action = button.data("action");
         
+        /*
+         * If the action variable is "edit" then find the task description
+         * in the same way it is found in the remove modal and a
+         */
         if(action === "edit")
         {
-            var listGroupItem = button.closest(".list-group-item");
-            description = listGroupItem.find('.todo-description').text();
-            _id = button.data("id");
-
+            /*
+             * Add code here
+             */
         }
         
         modal.find('input[name=description]').val(description.trim());

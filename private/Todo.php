@@ -47,9 +47,7 @@ class Todo extends Document{
     /**
      * Marks a todo as done
      */
-    public function markAsDone(){
-        $this->document["done"] = true;
-    }
+    // Add method to mark item as done here
     
     /**
      * Marks a todo as not done

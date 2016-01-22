@@ -9,25 +9,29 @@
  *  
  */
 
-/**
+/*
  * This overrides the php.ini setting for displaying errors. Useful for debugging.
  * If the page won't load uncomment this line
  */
 //ini_set('display_errors', '1');
 
-/**
+/******************************************************************
+ * Step 1:
+ * 
+ * Put your database connection credentials into the fields below
+ * 
  * These are the mongo connection details.
  * The connection is usually passed as one large string
  * However here the parts have been separated out for ease of use,
  * these constants will be used later for creating that string
- */
+ ******************************************************************/
 define("DB_SERVER","web.plenary-group.com");
 
-define("DB_NAME", "temptest");
+define("DB_NAME", "database");
 
-define("DB_USER","test");
+define("DB_USER","username");
 
-define("DB_PASS","test");
+define("DB_PASS","password");
 
 define("DB_PORT",null);
 

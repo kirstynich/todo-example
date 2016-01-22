@@ -71,7 +71,7 @@ abstract class Collection {
     }
     
     /**
-     * Creates a MongoURI string from applications global constants set in a config file somewhere
+     * Creates a MongoURI string from global constants
      * 
      * 
      * 
