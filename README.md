@@ -118,26 +118,26 @@ Firstly go to public/css/style.css and add a css class for done items that puts 
 Next there is a shorthand if else statement just inside the foreach loop on index.php that looks like this
 
 ```php
- $class = $todoItem["done"] ? "" : "";
- ```
- Add the name of your class as the string to be used if $todoItem["done"] is true
- ([for reference](http://www.abeautifulsite.net/how-to-use-the-php-ternary-operator/))
- 
- Run the example and check that clicking the done button on an item put a line through any done items.
- If it works commit the style.css, index.php and Todo.php files with a short message to say you added the "done" functionality.
- If you have any issues don't be afraid to get in touch and ask.
- 
- ## Editing Todo items
- In the index.php file find the btn-group that is used for each item. You will need to add a new button to edit items.
- This button should be put right after the done button (inside the if statement).
- The button should
- * have a cog icon
- * trigger the modal that adds todo items
- * have data-id attribute set to the id of the item
- * have the data-action attribute set to edit
-  
- Use font awesome for the [icon](http://fontawesome.io/)
- 
+    $class = $todoItem["done"] ? "" : "";
+```
+Add the name of your class as the string to be used if $todoItem["done"] is true
+([for reference](http://www.abeautifulsite.net/how-to-use-the-php-ternary-operator/))
+
+Run the example and check that clicking the done button on an item put a line through any done items.
+If it works commit the style.css, index.php and Todo.php files with a short message to say you added the "done" functionality.
+If you have any issues don't be afraid to get in touch and ask.
+
+## Editing todo items
+In the index.php file find the btn-group that is used for each item. You will need to add a new button to edit items.
+This button should be put right after the done button (inside the if statement).
+The button should
+* have a cog icon
+* trigger the modal that adds todo items
+* have data-id attribute set to the id of the item
+* have the data-action attribute set to edit
+
+Use font awesome for the [icon](http://fontawesome.io/)
+
 *(hint just copy the button that removes items. Change the icon and target then add the data-action attribute)*
 
 The button should now appear between the done and remove buttons and trigger the add item modal when clicked.
