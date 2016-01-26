@@ -145,7 +145,7 @@ Use font awesome for the [icon](http://fontawesome.io/)
 
 The button should now appear between the done and remove buttons and trigger the add item modal when clicked.
 
-The add item modal will now be used serve as an add and edit item modal, as such it will need to display the current item when used for editing and when the save button is clicked it will need to tell the werver which item was being edited along with the new description and that it is editing the item, not adding it.
+The add item modal will now be used serve as an add and edit item modal, as such it will need to display the current item when used for editing and when the save button is clicked it will need to tell the server which item was being edited along with the new description and that it is editing the item, not adding it.
 To do this you'll need to edit the jQuery event handler that opens the modal.
 
 Open up public/js/app.js and go to the empty if statement in the middle of the of the second event handler.
