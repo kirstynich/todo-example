@@ -1,7 +1,7 @@
 # todo-example
 This is a small example of using PHP and Mongo to make a to do list.
 
-Before progressing this example prseumes the following
+Before progressing this example presumes the following
 * You have a MongoDB database and authorisation credentials to access it
 * You have a web server with PHP and the MongoPHP driver installed
 * You are using an IDE or text editor with Git functionality, or have a git client installed on your machine
@@ -112,6 +112,9 @@ A public method will need to be added to mark the todo as done. The syntax is vi
 
 Now go back to index.php. You will need to add another case into the switch statement like in the previous task.
 The value to check for this time can be found in a hidden input on the panel body or by clicking the done button on an item and checking the request parameters. The code to be executed will need to call your method on the $todo object as well as the store method to save the change to the database.
+```php
+$todo->store();
+```
 
 **Please bear in mind you will have to call the store function in the case you added above to save the item**
 
@@ -128,7 +131,7 @@ Add the name of your class as the string to be used if $todoItem["done"] is true
 
 Run the example and check that clicking the done button on an item put a line through any done items.
 If it works commit the style.css, index.php and Todo.php files with a short message to say you added the "done" functionality.
-If you have any issues don't be afraid to get in touch and ask.
+If you have any issues you may need to clear your cache or hard reload the page, but don't be afraid to get in touch and ask.
 
 ## Editing todo items
 In the index.php file find the btn-group that is used for each item. You will need to add a new button to edit items.
