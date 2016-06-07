@@ -34,8 +34,10 @@ and open the template in the editor.
         {
             case "remove": $todo->delete(); break;
             case "add": $todo->createTodo($post_vars["description"]); break;
+            case "edit": $todo->createTodo($post_vars["description"]); break;
             // add a case to edit items on this line
             // add a case to mark items as done on this line
+            case "done":  $todo->markDone();$todo->store(); break;
         }
         
         // This creates a cursor of all the Todo items in our database
@@ -68,10 +70,13 @@ and open the template in the editor.
                             documentation on their web site -->
 
                             <button class="btn btn-sm btn-primary pull-right" data-toggle="modal" data-target="#modalAdd" data-action="add">
+                               
 <!--                            We are using font awesome for icons. For further info read the font awesome
                                 documentation on their web site-->
                                 <i class="fa fa-plus"></i> Add
-                            </button>
+                            </button> <button data-toggle="modal" data-target="#modalRemoveAll" type="button" class="btn btn-sm btn-primary pull-right"  data-id="<?php echo $id; ?>">
+                                                <i class="fa fa-times text-danger"></i>
+                                            </button>
                         </header>
                         <section class="panel-body">
                             <form method="post">
@@ -89,7 +94,7 @@ and open the template in the editor.
                                      * This shorthand version of an if statement. 
                                      * For more info lookup the ternary oprator in the php online manual
                                      */
-                                     $class = $todoItem["done"] ? "" : "";
+                                     $class = $todoItem["done"] ? 'doneitem' : '';
                                     ?>
                                     <li class="list-group-item clearfix <?php echo $class; ?>">
                                         <span class="todo-description">
@@ -105,11 +110,14 @@ and open the template in the editor.
                                             </button>
                                             
 <!--                                            Add button here to edit items-->
+                                            <button data-toggle="modal" class="btn btn-default" data-target="#modalAdd" type="button" class="btn btn-default" data-action="edit" data-id="<?php echo $id; ?>">
+                                                <i class="fa fa-cog"></i>edit
+                                            </button>
                                             
                                             <?php } ?>
 
                                             <!--The button below triggers a modal to confirm removing items, add the functionality to trigger a modal-->
-                                            <button data-toggle ="modal" data-target="#modalRemove" type="button" class="btn btn-default" data-id="<?php echo $id; ?>">
+                                            <button data-toggle="modal" data-target="#modalRemove" type="button" class="btn btn-default"  data-id="<?php echo $id; ?>">
                                                 <i class="fa fa-times text-danger"></i>
                                             </button>
                                         </div>
